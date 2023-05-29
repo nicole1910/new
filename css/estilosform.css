@@ -1,0 +1,13 @@
+body
+{
+	background-image:url("../images/fondo1.png") ;
+}
+
+.relleno
+
+{
+	background-color: #a6b07e;
+	margin: 350px;
+	padding: 40px;
+	width: 1200px;	
+}

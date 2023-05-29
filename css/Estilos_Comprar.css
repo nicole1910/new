@@ -1,0 +1,5520 @@
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport1 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport1 {
+      background-image: url("https://www.sneakersnstuff.com/images/333512/vn0a7q5jb3p-1.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport1 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport1 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport1 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport1 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport1 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport1 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport1 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport1 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport1 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport1,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport1 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+/* Le Fleur STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport2 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport2 {
+      background-image: url("file:///D:/Bootstrap/images/ACYS.png");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport2 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport2 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport2 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport2 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport2 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport2 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport2 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport2 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport2 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport2,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport2 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+/* ACYS STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport3 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport3 {
+      background-image: url("file:///D:/Bootstrap/images/ACYS.png");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport3 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport3 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport3 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport3 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport3 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport3 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport3 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport3 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport3 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport3,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport3 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+/* azulitas STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport4 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport4 {
+      background-image: url("https://sneakernews.com/wp-content/uploads/2018/04/tyler-the-creator-converse-one-star-golf-le-fleur-mono-collection.jpg?w=1140");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport4 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport4 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport4 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport4 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport4 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport4 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport4 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport4 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport4 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport4,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport4 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* golfrosaa STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport5 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport5 {
+      background-image: url("https://www.dhresource.com/webp/m/0x0/f2/albu/g8/M00/C4/31/rBVaVF7t3XmAQ4GgAANaooH0edo649.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport5 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport5 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport5 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport5 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport5 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport5 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport5 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport5 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport5 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport5,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport5 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+/* connverrosa STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport6 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport6 {
+      background-image: url("https://http2.mlstatic.com/D_NQ_NP_864012-MCO51337979977_082022-W.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport6 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport6 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport6 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport6 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport6 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport6 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport6 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport6 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport6 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport6,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport6 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* golfrosaa STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport5 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport5 {
+      background-image: url("https://www.dhresource.com/webp/m/0x0/f2/albu/g8/M00/C4/31/rBVaVF7t3XmAQ4GgAANaooH0edo649.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport5 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport5 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport5 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport5 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport5 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport5 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport5 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport5 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport5 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport5,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport5 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+/* cimarrona STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport7 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport7 {
+      background-image: url("file:///D:/Bootstrap/images/cv2.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport7 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport7 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport7 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport7 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport7 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport7 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport7 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport6 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport7 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport7,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport7 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport8 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport8 {
+      background-image: url("https://media.gq.com/photos/5b06dbf0bbaaa45af108a9c4/16:9/w_2560%2Cc_limit/Tyler-the-Creator-Converse-GQ-2018-052418.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport8 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport8 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport8 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport8 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport8 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport8 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport8 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport8 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport8 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport8,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport8 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport9 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport9 {
+      background-image: url("https://http2.mlstatic.com/D_NQ_NP_738928-CBT50968443776_082022-W.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport9 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport9 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport9 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport9 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport9 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport9 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport9 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport9 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport9 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport9,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport9 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport10 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport10 {
+      background-image: url("https://ae01.alicdn.com/kf/Hacd32e443dc14bd2bc0d3eb1f3b412e4K/New-luxury-Men-golf-Flower-Le-Fleur-Tyler-The-Creator-Blue-flame-Coats-Jackets-Down-Coats.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport10 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport10 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport10 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport10 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport10 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport10 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport10 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport10 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport10 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport10,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport10 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport11 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport11 {
+      background-image: url("https://i.etsystatic.com/22031789/r/il/90b391/3010926900/il_fullxfull.3010926900_n9ti.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport11 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport11 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport11 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport11 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport11 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport11 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport11 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport11 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport11 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport11,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport11 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport13 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport13 {
+      background-image: url("https://i.etsystatic.com/36621418/r/il/f2e5c2/4229161331/il_fullxfull.4229161331_75gd.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport13 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport13 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport13 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport13 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport13 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport13 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport13 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport13 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport13 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport13,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport13 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport13 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport13 {
+      background-image: url("https://i.etsystatic.com/36621418/r/il/f2e5c2/4229161331/il_fullxfull.4229161331_75gd.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport13 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport13 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport13 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport13 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport13 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport13 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport13 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport13 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport13 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport13,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport13 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport14 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport14 {
+      background-image: url("https://golfwangofficial.com/wp-content/uploads/2021/02/Hf188b51eeecd4ebfa76bc6ee7ae6a40br-600x600.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport14 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport14 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport14 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport14 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport14 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport14 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport14 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport14 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport14 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport14,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport14 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport15 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport15 {
+      background-image: url("https://th.bing.com/th/id/OIP.MFrdsGYN7D_Eo_XYA-WIWQHaHa?pid=ImgDet&rs=1");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport15 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport15 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport15 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport15 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport15 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport15 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport15 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport15 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport15 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport15,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport15 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport16 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport16 {
+      background-image: url("https://images.journeys.com/images/products/1_666168_ZM_ALT5.JPG");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport16 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport16 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport16 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport16 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport16 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport16 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport16 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport16 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport16 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport16,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport16 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport17 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport17 {
+      background-image: url("https://i.pinimg.com/736x/f8/57/ae/f857aefeda4ba65753eccf3a371227d1--sneakers.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport17 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport17 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport17 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport17 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport17 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport17 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport17 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport17 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport17 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport17,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport17 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* outnow STYLES */
+
+body {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  /* stop WebKit and Windows mobile changing text size */
+  -ms-text-size-adjust: 100%;
+  /* stop WebKit and Windows mobile changing text size */
+  margin: 0 auto !important;
+  /* fix email not centered on Android 4.4 + Samsung Mail */
+
+}
+
+table {
+  border-collapse: collapse !important;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+}
+
+/* Remove spacing between tables in Outlook 2007 and up */
+
+img {
+  border: 0;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  /* smoother resized images in Internet Explorer */
+}
+
+
+@media screen and (max-width: 580px) {
+  /* centre on gmail iphone */
+  .container {
+    width: 100vw !important;
+  }
+
+  .rwd-line {
+    display: block;
+  }
+
+  .center {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .width100 {
+    width: 100% !important;
+  }
+  .mobilehide {
+    display: none !important;
+  }
+}
+
+/* CAROUSEL STYLES */
+.carousel-container,
+input {
+  display: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0), screen and (min--moz-device-pixel-ratio: 0) {
+  @supports (color: #ffffff) {
+    .fallback {
+      display: none !important;
+    }
+
+    .carousel-container,
+    .carousel-viewport18 {
+      display: block !important;
+      width: 600px;
+      height: 400px;
+    }
+
+    .carousel-viewport18 {
+      background-image: url("https://mediacdn.wtennis.com.br/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/v/a/vans_atwood_low_ag_13_1016467_26121_17_28975_3_1.jpg");
+      background-size: 1800px 1200px;
+      background-position: center center;
+      transition: background-position 0.3s linear;
+      -webkit-transition: background-position 0.3s linear;
+    }
+
+    /* Nav markers */
+    .slide {
+      display: none;
+      width: 600px;
+      height: 400px;
+      position: relative;
+      animation: fadeIn linear 0.7s;
+      -webkit-animation: fadeIn linear 0.7s;
+    }
+    .slide label {
+      position: absolute;
+      width: 28px;
+      height: 52px;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .slide label img {
+      width: 100%;
+      animation: pulse 1.5s ease-in-out infinite;
+      -webkit-animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    label.up {
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-90deg);
+      -webkit-transform: translateX(-50%) rotate(-90deg);
+    }
+    label.left {
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%) rotate(-180deg);
+      -webkit-transform: translateY(-50%) rotate(-180deg);
+    }
+    label.right {
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+    }
+    label.down {
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      -webkit-transform: translateX(-50%) rotate(90deg);
+    }
+
+    /* CHECK CONTROLS */
+    #slide1:checked ~ div .slide-tl {
+      display: block !important;
+    }
+    #slide1:checked ~ .carousel-viewport18 {
+      background-position: left top;
+    }
+
+    #slide2:checked ~ div .slide-tc {
+      display: block !important;
+    }
+    #slide2:checked ~ .carousel-viewport18 {
+      background-position: center top;
+    }
+
+    #slide3:checked ~ div .slide-tr {
+      display: block !important;
+    }
+    #slide3:checked ~ .carousel-viewport18 {
+      background-position: right top;
+    }
+
+    #slide4:checked ~ div .slide-ml {
+      display: block !important;
+    }
+    #slide4:checked ~ .carousel-viewport18 {
+      background-position: left center;
+    }
+
+    #slide5:checked ~ div .slide-mid {
+      display: block !important;
+    }
+    #slide5:checked ~ .carousel-viewport18 {
+      background-position: center center;
+    }
+
+    #slide6:checked ~ div .slide-mr {
+      display: block !important;
+    }
+    #slide6:checked ~ .carousel-viewport18 {
+      background-position: right center;
+    }
+
+    #slide7:checked ~ div .slide-bl {
+      display: block !important;
+    }
+    #slide7:checked ~ .carousel-viewport18 {
+      background-position: left bottom;
+    }
+
+    #slide8:checked ~ div .slide-bc {
+      display: block !important;
+    }
+    #slide8:checked ~ .carousel-viewport18 {
+      background-position: center bottom;
+    }
+
+    #slide9:checked ~ div .slide-br {
+      display: block !important;
+    }
+    #slide9:checked ~ .carousel-viewport18 {
+      background-position: right bottom;
+    }
+
+    @media screen and (max-width: 580px) {
+      .carousel-container,
+      .carousel-viewport18,
+      .slide {
+        width: 100vw !important;
+        height: 66vw !important;
+      }
+
+      .carousel-viewport18 {
+        background-size: 300vw 198vw !important;
+      }
+    }
+
+    /* fallbacks */
+    div[class~="aolmail_fallback"],
+    #MessageViewBody .fallback {
+      display: block !important;
+    }
+
+    div[class~="aolmail_carousel-container"],
+    #MessageViewBody .carousel-container {
+      display: none !important;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.1, 1.1);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+    }
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(1, 1);
+      }
+      50% {
+        -webkit-transform: scale(1.1, 1.1);
+      }
+      100% {
+        -webkit-transform: scale(1, 1);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.row1
+{
+  color: pink;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+
+
+
+
+
+

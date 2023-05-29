@@ -1,0 +1,13 @@
+
+
+.relleno{
+	background-color:#F4FCFD;	
+	margin: 300px;
+	padding: 50px;
+	width: 600px;
+}
+
+body{
+	/*background-image: url("../images/fondo.jpg");*/
+	background-color: #15C6C3;
+}

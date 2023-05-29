@@ -1,0 +1,49 @@
+
+
+.container
+
+{
+	background: black;
+}
+
+
+
+
+
+
+
+
+.tittle-center
+{
+	color: 	#465D42;
+	font-family: 'Alfa Slab One', cursive;
+}
+
+
+img 
+{
+ 	max-width: 100%;
+	max-height: 100%;
+}
+
+
+.carousel-item-active
+{
+ 	height: 300px;
+ 	width: 400px;
+}
+
+.carousel-item
+
+{
+ 	height: 300px;
+ 	width: 400px;	
+}
+
+
+
+
+
+
+
+
